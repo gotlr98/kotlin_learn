@@ -14,6 +14,8 @@ fun main() {
 
     var nullVar : String? = null
 
+    val sik = Person(name = "sik", age=28)
+
     items.set(0, 0)
 
     itemsList.add(6)
@@ -52,6 +54,12 @@ fun main() {
         }
     }
 
+    fun sum(a: Int, b: Int): Int{
+        return a+b
+    }
+
+    fun sum2(a: Int, b: Int): Int = a + b
+
     println(result)
 
     println(const_num)
@@ -66,4 +74,27 @@ fun main() {
 
 
 
+
+}
+
+class Person(
+    val name: String,
+    var age: Int
+)
+
+abstract class Animal{
+    open fun move(){
+    }
+}
+
+class Dog: Animal(){
+    override fun move(){
+
+    }
+}
+
+suspend fun concFunc(a: Int, callBack: () ->Unit){
+    println("concFunc() Start")
+    callBack()
+    println("concFunc() Finish")
 }
